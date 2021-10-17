@@ -9,10 +9,21 @@ import UIKit
 
 class SimpleCalculator:UIViewController{
     
+    var firstNumber:Int?
+    var secondNumber:Int?
+    var operation:Opt?
+    
+    enum Opt{
+        case add
+        case sub
+        case mul
+        case div
+    }
+    
     lazy var textLabel:UILabel={
         let label = UILabel()
         label.text = "0"
-        label.font = UIFont.systemFont(ofSize: 60, weight: UIFont.Weight.regular)
+        label.font = UIFont.systemFont(ofSize: 40, weight: UIFont.Weight.regular)
         label.textAlignment = .right
         label.widthAnchor.constraint(equalToConstant: view.frame.width-50).isActive = true
         return label
@@ -160,6 +171,7 @@ class SimpleCalculator:UIViewController{
         button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
         button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
         button.layer.cornerRadius = (view.frame.width-30)/8
+        button.addTarget(self, action: #selector(tapEqual), for: UIControl.Event.touchUpInside)
         return button
     }()
     
@@ -172,6 +184,7 @@ class SimpleCalculator:UIViewController{
         button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
         button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
         button.layer.cornerRadius = (view.frame.width-30)/8
+        button.addTarget(self, action: #selector(tapOperator(_:)), for: UIControl.Event.touchUpInside)
         return button
     }()
     
@@ -184,6 +197,7 @@ class SimpleCalculator:UIViewController{
         button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
         button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
         button.layer.cornerRadius = (view.frame.width-30)/8
+        button.addTarget(self, action: #selector(tapOperator(_:)), for: UIControl.Event.touchUpInside)
         return button
     }()
     
@@ -196,6 +210,7 @@ class SimpleCalculator:UIViewController{
         button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
         button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
         button.layer.cornerRadius = (view.frame.width-30)/8
+        button.addTarget(self, action: #selector(tapOperator(_:)), for: UIControl.Event.touchUpInside)
         return button
     }()
     
@@ -208,6 +223,20 @@ class SimpleCalculator:UIViewController{
         button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
         button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
         button.layer.cornerRadius = (view.frame.width-30)/8
+        button.addTarget(self, action: #selector(tapOperator(_:)), for: UIControl.Event.touchUpInside)
+        return button
+    }()
+    
+    lazy var clearButton:UIButton={
+        let button = UIButton(type: UIButton.ButtonType.system)
+        button.setTitle("AC", for: UIControl.State.normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
+        button.backgroundColor = .systemGray
+        button.tintColor = .black
+        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
+        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
+        button.layer.cornerRadius = (view.frame.width-30)/8
+        button.addTarget(self, action: #selector(tapClear), for: UIControl.Event.touchUpInside)
         return button
     }()
     
@@ -225,6 +254,58 @@ class SimpleCalculator:UIViewController{
         }
     }
     
+    @objc func tapClear(){
+        textLabel.text = "0"
+    }
+    
+    @objc func tapOperator(_ sender:UIButton){
+        guard let opt = sender.titleLabel?.text,
+              let first = self.textLabel.text else{return}
+        firstNumber = Int(first)
+        self.textLabel.text = "0"
+        
+        switch opt{
+        case "+":
+            operation = .add
+        case "-":
+            operation = .sub
+        case "x":
+            operation = .mul
+        case "/":
+            operation = .div
+        default:
+            print("Nothing operator")
+        }
+    }
+    
+    @objc func tapEqual(){
+        guard let text = textLabel.text, operation != nil else{return}
+        secondNumber = Int(text)
+        switch operation{
+        case .add:
+            textLabel.text = String(firstNumber! + secondNumber!)
+            operation = nil
+            firstNumber = 0
+            secondNumber = 0
+        case .sub:
+            textLabel.text = String(firstNumber! - secondNumber!)
+            operation = nil
+            firstNumber = 0
+            secondNumber = 0
+        case .mul:
+            textLabel.text = String(firstNumber! * secondNumber!)
+            operation = nil
+            firstNumber = 0
+            secondNumber = 0
+        case .div:
+            textLabel.text = String(firstNumber! / secondNumber!)
+            operation = nil
+            firstNumber = 0
+            secondNumber = 0
+        default:
+            print("값을 제대로 입력하세요")
+    }
+    }
     //MARK: -Configure
     func configure(){
         view.backgroundColor = .systemBackground
@@ -315,5 +396,10 @@ class SimpleCalculator:UIViewController{
         textLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         textLabel.bottomAnchor.constraint(equalTo: divideOperator.topAnchor, constant: -10).isActive = true
         
+        view.addSubview(clearButton)
+        clearButton.translatesAutoresizingMaskIntoConstraints = false
+        clearButton.centerXAnchor.constraint(equalTo: sevenButton.centerXAnchor).isActive = true
+        clearButton.bottomAnchor.constraint(equalTo: sevenButton.topAnchor, constant: -10).isActive = true
     }
 }
+
