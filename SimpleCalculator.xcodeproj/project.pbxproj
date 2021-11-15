@@ -15,6 +15,7 @@
 		702E99EC2714442E008CA43B /* SimpleCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702E99EB2714442E008CA43B /* SimpleCalculatorTests.swift */; };
 		702E99F72714442E008CA43B /* SimpleCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702E99F62714442E008CA43B /* SimpleCalculatorUITests.swift */; };
 		702E9A06271444A1008CA43B /* SimpleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702E9A05271444A1008CA43B /* SimpleCalculator.swift */; };
+		702E9AC5271CCF3E008CA43B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702E9AC4271CCF3E008CA43B /* Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		702E99F62714442E008CA43B /* SimpleCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculatorUITests.swift; sourceTree = "<group>"; };
 		702E99F82714442E008CA43B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		702E9A05271444A1008CA43B /* SimpleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculator.swift; sourceTree = "<group>"; };
+		702E9AC4271CCF3E008CA43B /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		702E99C82714442D008CA43B = {
 			isa = PBXGroup;
 			children = (
+				702E9AC3271CCF08008CA43B /* Utilities */,
 				702E9A0427144494008CA43B /* Controllers */,
 				702E99D32714442D008CA43B /* SimpleCalculator */,
 				702E99EA2714442E008CA43B /* SimpleCalculatorTests */,
@@ -134,6 +137,14 @@
 				702E9A05271444A1008CA43B /* SimpleCalculator.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		702E9AC3271CCF08008CA43B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				702E9AC4271CCF3E008CA43B /* Utility.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				702E9AC5271CCF3E008CA43B /* Utility.swift in Sources */,
 				702E9A06271444A1008CA43B /* SimpleCalculator.swift in Sources */,
 				702E99D52714442D008CA43B /* AppDelegate.swift in Sources */,
 				702E99D72714442D008CA43B /* SceneDelegate.swift in Sources */,

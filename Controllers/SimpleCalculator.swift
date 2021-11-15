@@ -28,114 +28,34 @@ class SimpleCalculator:UIViewController{
         label.widthAnchor.constraint(equalToConstant: view.frame.width-50).isActive = true
         return label
     }()
-    lazy var oneButton:UIButton={
-        let button = UIButton(type: UIButton.ButtonType.system)
-        button.setTitle("1", for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
-        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.layer.cornerRadius = ((view.frame.width-30)/4)/2
-        button.backgroundColor = .tertiarySystemBackground
-        button.tintColor = .white
-        button.addTarget(self, action: #selector(tapNumber(_:)), for: UIControl.Event.touchUpInside)
-        return button
-    }()
-    lazy var twoButton:UIButton={
-        let button = UIButton(type: UIButton.ButtonType.system)
-        button.setTitle("2", for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
-        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.layer.cornerRadius = (view.frame.width-30)/8
-        button.backgroundColor = .tertiarySystemBackground
-        button.tintColor = .white
-        button.addTarget(self, action: #selector(tapNumber(_:)), for: UIControl.Event.touchUpInside)
-        return button
-    }()
-    lazy var threeButton:UIButton={
-        let button = UIButton(type: UIButton.ButtonType.system)
-        button.setTitle("3", for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
-        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.layer.cornerRadius = (view.frame.width-30)/8
-        button.backgroundColor = .tertiarySystemBackground
-        button.tintColor = .white
-        button.addTarget(self, action: #selector(tapNumber(_:)), for: UIControl.Event.touchUpInside)
-        return button
-    }()
-    lazy var fourButton:UIButton={
-        let button = UIButton(type: UIButton.ButtonType.system)
-        button.setTitle("4", for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
-        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.layer.cornerRadius = (view.frame.width-30)/8
-        button.backgroundColor = .tertiarySystemBackground
-        button.tintColor = .white
-        button.addTarget(self, action: #selector(tapNumber(_:)), for: UIControl.Event.touchUpInside)
-        return button
-    }()
-    lazy var fiveButton:UIButton={
-        let button = UIButton(type: UIButton.ButtonType.system)
-        button.setTitle("5", for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
-        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.layer.cornerRadius = (view.frame.width-30)/8
-        button.backgroundColor = .tertiarySystemBackground
-        button.tintColor = .white
-        button.addTarget(self, action: #selector(tapNumber(_:)), for: UIControl.Event.touchUpInside)
-        return button
-    }()
-    lazy var sixButton:UIButton={
-        let button = UIButton(type: UIButton.ButtonType.system)
-        button.setTitle("6", for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
-        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.layer.cornerRadius = (view.frame.width-30)/8
-        button.backgroundColor = .tertiarySystemBackground
-        button.tintColor = .white
-        button.addTarget(self, action: #selector(tapNumber(_:)), for: UIControl.Event.touchUpInside)
-        return button
-    }()
-    lazy var sevenButton:UIButton={
-        let button = UIButton(type: UIButton.ButtonType.system)
-        button.setTitle("7", for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
-        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.layer.cornerRadius = (view.frame.width-30)/8
-        button.backgroundColor = .tertiarySystemBackground
-        button.tintColor = .white
-        button.addTarget(self, action: #selector(tapNumber(_:)), for: UIControl.Event.touchUpInside)
-        return button
-    }()
-    lazy var eightButton:UIButton={
-        let button = UIButton(type: UIButton.ButtonType.system)
-        button.setTitle("8", for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
-        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.layer.cornerRadius = (view.frame.width-30)/8
-        button.backgroundColor = .tertiarySystemBackground
-        button.tintColor = .white
-        button.addTarget(self, action: #selector(tapNumber(_:)), for: UIControl.Event.touchUpInside)
-        return button
-    }()
-    lazy var nineButton:UIButton={
-        let button = UIButton(type: UIButton.ButtonType.system)
-        button.setTitle("9", for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
-        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.layer.cornerRadius = (view.frame.width-30)/8
-        button.backgroundColor = .tertiarySystemBackground
-        button.tintColor = .white
-        button.addTarget(self, action: #selector(tapNumber(_:)), for: UIControl.Event.touchUpInside)
-        return button
-    }()
+    lazy var oneButton:UIButton=Utility.shared.makeCircleBtn(title: "1", tintColor: UIColor.white,backgroundcolor: .tertiarySystemBackground, radius: (view.frame.width-30)/4)
+//        {
+//        let button = UIButton(type: UIButton.ButtonType.system)
+//        button.setTitle("1", for: UIControl.State.normal)
+//        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
+//        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
+//        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
+//        button.layer.cornerRadius = ((view.frame.width-30)/4)/2
+//        button.backgroundColor = .tertiarySystemBackground
+//        button.tintColor = .white
+//        button.addTarget(self, action: #selector(tapNumber(_:)), for: UIControl.Event.touchUpInside)
+//        return button
+//    }()
+    lazy var twoButton:UIButton=Utility.shared.makeCircleBtn(title: "2", tintColor: UIColor.white,backgroundcolor: .tertiarySystemBackground, radius: (view.frame.width-30)/4)
+    
+    lazy var threeButton:UIButton=Utility.shared.makeCircleBtn(title: "3", tintColor: UIColor.white,backgroundcolor: .tertiarySystemBackground, radius: (view.frame.width-30)/4)
+    
+    lazy var fourButton:UIButton=Utility.shared.makeCircleBtn(title: "4", tintColor: UIColor.white,backgroundcolor: .tertiarySystemBackground, radius: (view.frame.width-30)/4)
+    
+    lazy var fiveButton:UIButton=Utility.shared.makeCircleBtn(title: "5", tintColor: UIColor.white,backgroundcolor: .tertiarySystemBackground, radius: (view.frame.width-30)/4)
+    
+    lazy var sixButton:UIButton=Utility.shared.makeCircleBtn(title: "6", tintColor: UIColor.white,backgroundcolor: .tertiarySystemBackground, radius: (view.frame.width-30)/4)
+    
+    lazy var sevenButton:UIButton=Utility.shared.makeCircleBtn(title: "7", tintColor: UIColor.white,backgroundcolor: .tertiarySystemBackground, radius: (view.frame.width-30)/4)
+    
+    lazy var eightButton:UIButton=Utility.shared.makeCircleBtn(title: "8", tintColor: UIColor.white,backgroundcolor: .tertiarySystemBackground, radius: (view.frame.width-30)/4)
+    
+    lazy var nineButton:UIButton=Utility.shared.makeCircleBtn(title: "9", tintColor: UIColor.white,backgroundcolor: .tertiarySystemBackground, radius: (view.frame.width-30)/4)
     
     lazy var zeroButton:UIButton={
         let button = UIButton(type: UIButton.ButtonType.system)
@@ -150,17 +70,7 @@ class SimpleCalculator:UIViewController{
         return button
     }()
     
-    lazy var pointButton:UIButton={
-        let button = UIButton(type: UIButton.ButtonType.system)
-        button.setTitle(".", for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
-        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4 ).isActive = true
-        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.layer.cornerRadius = (view.frame.width-30)/8
-        button.backgroundColor = .tertiarySystemBackground
-        button.tintColor = .white
-        return button
-    }()
+    lazy var pointButton:UIButton=Utility.shared.makeCircleBtn(title: ".", tintColor: UIColor.white,backgroundcolor: .tertiarySystemBackground, radius: (view.frame.width-30)/4)
     
     lazy var equalOperator:UIButton={
         let button = UIButton(type: UIButton.ButtonType.system)
@@ -175,57 +85,13 @@ class SimpleCalculator:UIViewController{
         return button
     }()
     
-    lazy var plusOperator:UIButton={
-        let button = UIButton(type: UIButton.ButtonType.system)
-        button.setTitle("+", for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
-        button.backgroundColor = .systemOrange
-        button.tintColor = .white
-        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.layer.cornerRadius = (view.frame.width-30)/8
-        button.addTarget(self, action: #selector(tapOperator(_:)), for: UIControl.Event.touchUpInside)
-        return button
-    }()
+    lazy var plusOperator:UIButton=Utility.shared.makeOperatorBtn(title: "+", tintColor: UIColor.white, backgroundcolor: UIColor.systemOrange, radius: (view.frame.width-30)/4)
     
-    lazy var minusOperator:UIButton={
-        let button = UIButton(type: UIButton.ButtonType.system)
-        button.setTitle("-", for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
-        button.backgroundColor = .systemOrange
-        button.tintColor = .white
-        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.layer.cornerRadius = (view.frame.width-30)/8
-        button.addTarget(self, action: #selector(tapOperator(_:)), for: UIControl.Event.touchUpInside)
-        return button
-    }()
+    lazy var minusOperator:UIButton=Utility.shared.makeOperatorBtn(title: "-", tintColor: UIColor.white, backgroundcolor: UIColor.systemOrange, radius: (view.frame.width-30)/4)
     
-    lazy var multiOperator:UIButton={
-        let button = UIButton(type: UIButton.ButtonType.system)
-        button.setTitle("x", for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
-        button.backgroundColor = .systemOrange
-        button.tintColor = .white
-        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.layer.cornerRadius = (view.frame.width-30)/8
-        button.addTarget(self, action: #selector(tapOperator(_:)), for: UIControl.Event.touchUpInside)
-        return button
-    }()
+    lazy var multiOperator:UIButton=Utility.shared.makeOperatorBtn(title: "x", tintColor: UIColor.white, backgroundcolor: UIColor.systemOrange, radius: (view.frame.width-30)/4)
     
-    lazy var divideOperator:UIButton={
-        let button = UIButton(type: UIButton.ButtonType.system)
-        button.setTitle("/", for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
-        button.backgroundColor = .systemOrange
-        button.tintColor = .white
-        button.widthAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.heightAnchor.constraint(equalToConstant: (view.frame.width-30)/4).isActive = true
-        button.layer.cornerRadius = (view.frame.width-30)/8
-        button.addTarget(self, action: #selector(tapOperator(_:)), for: UIControl.Event.touchUpInside)
-        return button
-    }()
+    lazy var divideOperator:UIButton=Utility.shared.makeOperatorBtn(title: "/", tintColor: UIColor.white, backgroundcolor: UIColor.systemOrange, radius: (view.frame.width-30)/4)
     
     lazy var clearButton:UIButton={
         let button = UIButton(type: UIButton.ButtonType.system)
